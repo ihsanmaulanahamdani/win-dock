@@ -49,6 +49,31 @@ saat update atau uninstall. Alat pembuat kunci untuk penjual
 (`tools\WinDockKeygen.cmd`) adalah aplikasi terpisah dan tidak ikut di dalam
 installer WinDock.
 
+## Cara membeli WinDock Pro
+
+Pembelian dilakukan langsung ke penjual. Hubungi penjual melalui tautan
+Saweria (`https://saweria.co/sansandev`) atau GitHub
+(`https://github.com/ihsanmaulanahamdani/win-dock`), lalu sampaikan bahwa Anda
+ingin membeli lisensi WinDock Pro. Harga dan metode pembayaran diinformasikan
+langsung oleh penjual.
+
+Data yang perlu dikirim:
+
+| Data | Keterangan |
+| --- | --- |
+| ID Perangkat | Wajib. Salin dari **Pengaturan > Lisensi**. Format `WD-XXXX-XXXX-XXXX-XXXX-XXXX` dan unik per PC. |
+| Nama pemilik lisensi | Wajib. Nama yang tampil di detail lisensi. |
+| Email | Wajib. Dipakai untuk mengirim kunci lisensi dan invoice. |
+| Nomor invoice/order | Wajib. Nomor transaksi pembayaran yang dipakai penjual untuk mencatat lisensi. |
+
+Setelah pembayaran diterima, penjual mengirim kunci lisensi dan invoice.
+Tempel kunci di **Pengaturan > Lisensi**, lalu klik **Aktifkan**.
+
+Lisensi terikat ke satu perangkat. Install ulang Windows biasanya memakai ID
+Perangkat yang sama, tetapi mengganti motherboard/BIOS atau pindah PC
+memerlukan kunci baru. Kunci offline tidak bisa dicabut, jadi pembelian tidak
+dapat dibatalkan setelah kunci dikirim.
+
 ## Yang baru di 1.4.0
 
 - **WinDock Pro**: lisensi permanen satu perangkat dengan aktivasi offline dari halaman **Pengaturan > Lisensi**. Fitur Pro mencakup jam/tanggal, jam di notch, persentase baterai di notch, jalankan saat Windows menyala, pin tanpa batas, dan ganti ikon.
