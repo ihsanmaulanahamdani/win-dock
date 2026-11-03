@@ -2,13 +2,13 @@
 
 Dock melayang untuk Windows: bilah minimalis dengan latar kaca bergradasi, sudut membulat, dan ikon aplikasi yang seragam. Menampilkan aplikasi yang sedang berjalan dan aplikasi yang dipin, dengan tombol Start menu Windows, tema gelap/terang, ukuran ikon dan opasitas latar yang bisa diatur, serta ikon kustom per aplikasi maupun per tombol dock.
 
-- Versi: **1.3.8**
+- Versi: **1.4.0**
 - Platform: **Windows 10 / Windows 11 (64-bit)**
 - Tidak perlu memasang .NET Runtime: aplikasi sudah dibungkus di dalam installer.
 
 ## Cara instal
 
-1. Unduh `WinDock-Setup-1.3.8.exe`.
+1. Unduh `WinDock-Setup-1.4.0.exe`.
 2. Klik dua kali file tersebut.
 3. Di jendela installer, klik **Instal**.
 4. Tunggu progress bar sampai selesai, lalu klik **Selesai**.
@@ -23,15 +23,46 @@ Shortcut dibuat di Desktop (bisa dilewati lewat checkbox) dan menu Mulai.
 
 > Jika Windows SmartScreen menampilkan peringatan karena file belum ditandatangani, pilih **More info > Run anyway**.
 
-## Yang baru di 1.3.8
+## WinDock Free dan Pro
 
-- **Taskbar tidak muncul lagi**: taskbar Windows dipantau terus selama WinDock berjalan. Kalau explorer menampilkan ulang taskbar saat Start menu dibuka atau focus berubah, WinDock langsung menyembunyikannya kembali. Handle taskbar juga dicari ulang otomatis kalau explorer restart.
-- **Tombol Tutup WinDock**: tombol kaca merah di paling bawah sidebar pengaturan untuk menutup WinDock sepenuhnya. Setelah ditutup, taskbar dan menu Mulai Windows kembali normal.
-- **Menu tray dirapikan**: item **Keluar** dihapus dari menu system tray. Penutupan aplikasi dilakukan lewat tombol merah di pengaturan.
-- **Tutup aplikasi dari dock**: klik kanan ikon aplikasi yang sedang berjalan, pilih **Tutup aplikasi**. Kalau aplikasi punya beberapa jendela, menu berubah menjadi **Tutup semua jendela (N)** dan menutup semuanya sekaligus.
-- **Watchdog taskbar**: taskbar yang dipaksa tampil oleh shell akan disembunyikan lagi dalam hitungan milidetik, jadi tidak ada kedipan taskbar saat Start menu dibuka.
-- **Tautan di halaman Tentang**: kartu GitHub dan Buy me a Coffee (Saweria) untuk melihat proyek atau mendukung pengembangan WinDock.
-- Versi dinaikkan ke **1.3.8**.
+WinDock memakai dua tingkat lisensi:
+
+| Fitur | Free | Pro |
+| --- | --- | --- |
+| Jam dan tanggal di dock | - | Ya |
+| Jam di notch | - | Ya |
+| Persentase baterai di notch | - | Ya |
+| Jalankan saat Windows menyala | - | Ya |
+| Jumlah aplikasi pin | 8 | Tanpa batas |
+| Ganti ikon aplikasi/tombol | - | Ya |
+| Ukuran ikon quick action, jarak, dan teks jam/tanggal | - | Ya |
+
+Lisensi Pro bersifat permanen, berlaku untuk update berikutnya, dan terikat ke
+satu perangkat. Aktivasi offline:
+
+1. Buka **Pengaturan > Lisensi**.
+2. Salin **ID Perangkat**, kirim ke penjual saat membeli.
+3. Tempel kunci lisensi, lalu klik **Aktifkan**.
+
+Kunci lisensi disimpan di `%APPDATA%\WinDock\license.key` dan tidak dihapus
+saat update atau uninstall. Alat pembuat kunci untuk penjual
+(`tools\WinDockKeygen.cmd`) adalah aplikasi terpisah dan tidak ikut di dalam
+installer WinDock.
+
+## Yang baru di 1.4.0
+
+- **WinDock Pro**: lisensi permanen satu perangkat dengan aktivasi offline dari halaman **Pengaturan > Lisensi**. Fitur Pro mencakup jam/tanggal, jam di notch, persentase baterai di notch, jalankan saat Windows menyala, pin tanpa batas, dan ganti ikon.
+- **Free dan Pro**: versi Free tetap bisa memakai dock dan pin sampai 8 aplikasi. Data pin, ikon kustom, dan setelan tidak dihapus saat lisensi tidak aktif.
+- **Jam dan tanggal terpisah**: toggle **Show clock**, **Show date**, dan **Show clock in notch** berdiri sendiri.
+- **Tampilan tanggal baru**: mode tanggal saja menampilkan nama hari di atas dan tanggal di bawah. Saat digabung dengan jam, keduanya tampil sebagai `Hari, Tanggal` di atas jam.
+- **Format hari dan tanggal**: pilihan format lewat dropdown, dengan contoh Indonesia dan English untuk setiap pilihan.
+- **Ukuran quick action**: slider untuk mengatur ikon baterai, jaringan, dan volume bersamaan, plus jarak antar ikonnya. Wrapper kaca tetap mengikuti ukuran tile dock, hanya ikon di dalamnya yang berubah.
+- **Ukuran teks jam/tanggal**: slider terpisah untuk memperbesar atau memperkecil teks jam dan tanggal di dock.
+- **Default baru**: ukuran ikon 48, quick action 80%, jarak 50%, teks jam/tanggal 90%, dan posisi dock di bawah.
+- **Buka aplikasi lagi**: klik kanan ikon aplikasi yang sudah berjalan, lalu pilih **Buka aplikasi lagi** untuk membuka instance atau jendela baru.
+- **Notch lebih rapi**: jika hanya jam atau persentase baterai yang aktif, isinya di tengah; jika keduanya aktif, posisinya justify-between.
+- **UI lisensi**: badge PRO dengan mahkota di sidebar dan bagian terkait, detail lisensi berupa daftar nama, invoice, dan tanggal dengan pemisah.
+- Versi dinaikkan ke **1.4.0**.
 
 ## Fitur
 
@@ -48,7 +79,7 @@ Shortcut dibuat di Desktop (bisa dilewati lewat checkbox) dan menu Mulai.
 - Semua ikon dibungkus tile kaca tanpa border dengan sudut membulat yang konsisten.
 - Ikon tiap aplikasi bisa diganti sendiri tanpa mengubah aplikasi aslinya. Format yang didukung: `.ico`, `.png`, `.jpg`, `.jpeg`, `.bmp`, `.gif` (termasuk GIF beranimasi), atau ambil ikon dari `.exe`/`.dll`.
 - Ikon kustom disalin ke `%APPDATA%\WinDock\icons\`, jadi tetap tampil walau file aslinya dipindah atau dihapus.
-- Pengaturan: ukuran ikon, mode gelap/terang, opasitas latar dock, bahasa, posisi dock, tombol Start menu, dan toggle **Jalankan saat Windows menyala**.
+- Pengaturan: ukuran ikon, ukuran dan jarak quick action, ukuran teks jam/tanggal, mode gelap/terang, opasitas latar dock, bahasa, posisi dock, tombol Start menu, dan toggle **Jalankan saat Windows menyala**.
 - Kelola aplikasi pin dan pindai aplikasi terinstall.
 - Daftar aplikasi memakai grid kartu dengan pencarian dan indikator aplikasi yang sudah dipin.
 - Sidebar pengaturan menampilkan nama, versi, dan pemakaian RAM WinDock secara langsung.
@@ -56,6 +87,9 @@ Shortcut dibuat di Desktop (bisa dilewati lewat checkbox) dan menu Mulai.
 - Tautan GitHub dan Buy me a Coffee (Saweria) di halaman Tentang.
 - Dock tampil di semua virtual desktop Windows.
 - Ikon WinDock tersedia untuk exe, shortcut, dan jendela pengaturan.
+- Jam dock, tanggal, dan jam notch punya toggle terpisah; format hari/tanggal bisa dipilih dari dropdown.
+- WinDock Pro: lisensi permanen satu perangkat, aktivasi offline, dan pin tanpa batas.
+- Menu klik kanan aplikasi yang sedang berjalan menyediakan **Buka aplikasi lagi** untuk membuka instance/jendela baru.
 - Setelan dan daftar ikon kustom disimpan di `%APPDATA%\WinDock\settings.json`.
 
 ## Kontrol
@@ -156,9 +190,11 @@ Setelan dan ikon kustom di `%APPDATA%\WinDock` tidak dihapus otomatis.
 - Menutup WinDock mengembalikan taskbar dan menu Mulai Windows ke perilaku normal.
 - Aplikasi yang hanya punya ikon tray (tanpa jendela) tidak ditampilkan.
 - Pemindai aplikasi membaca shortcut Start Menu; aplikasi tanpa shortcut tidak muncul di daftar scan.
-- Ikon indikator baterai, jaringan, dan volume belum bisa diganti.
+- Ikon indikator baterai, jaringan, dan volume belum bisa diganti; ukurannya bisa diatur lewat slider quick action.
 - Ikon kustom terikat ke path aplikasi. Jika aplikasi dipindah atau di-install ulang ke path berbeda, atur ulang ikonnya.
 
 ## Lisensi
 
-Bebas dipakai, dimodifikasi, dan dibagikan ulang, termasuk untuk keperluan pribadi maupun komunitas. Syaratnya sederhana: jangan mengklaim WinDock sebagai karya sendiri dan jangan menghapus kredit pembuat aslinya. Perangkat lunak disediakan apa adanya, tanpa garansi.
+WinDock Free bebas dipakai untuk keperluan pribadi maupun komunitas. Jangan mengklaim WinDock sebagai karya sendiri atau menghapus kredit pembuat aslinya. Perangkat lunak disediakan apa adanya, tanpa garansi.
+
+WinDock Pro adalah lisensi berbayar permanen untuk satu perangkat. Kunci lisensi bersifat pribadi dan tidak boleh dibagikan atau dijual ulang. Alat pembuat kunci (keygen) hanya untuk penjual dan tidak disertakan dalam installer.
